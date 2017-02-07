@@ -24,7 +24,7 @@ void test(float acc_x, float acc_y, float acc_z, unsigned int light);
 
 int main() {
 	int testOk = 0;
-    test(0,0,0,0);      /* OK */
+    test(0.3 ,1.5 ,1.2 ,0);      /* OK */
     strcat(GENERATED_OUTPUT, "\n\n");
     test(0,0,1,35);    /* HIGH TEMP */
     strcat(GENERATED_OUTPUT, "\n\n");
@@ -50,6 +50,7 @@ void test(float acc_x, float acc_y, float acc_z, unsigned int light) {
     ed = CreateEnvironmentData(acc_x, acc_y, acc_z, light);
     CalculateSystemState(&ed);
     strcpy(word, toString(ed.state));
+    printf("\n System state : %i \n", ed.state);
     strcat(GENERATED_OUTPUT, word);
     strcat(GENERATED_OUTPUT, "\n");
     CharToMorse(word, morseWord);
