@@ -15,9 +15,9 @@ EnvironmentData CreateEnvironmentData(float acc_x, float acc_y, float acc_z, sig
 	printf(" y = %f", acc_y);
 	printf(" z = %f", acc_z);
 
-	int acc_x_int = (int) (acc_x*10);
-	int acc_y_int = (int) (acc_y*10);
-	int acc_z_int = (int) (acc_z*10);
+	int acc_x_int = (int) (acc_x * 10 + 0.5);
+	int acc_y_int = (int) (acc_y * 10 + 0.5);
+	int acc_z_int = (int) (acc_z * 10 + 0.5);
 
 	printf(" x after *10 = %i", acc_x_int);
 	printf(" y after *10  = %i", acc_y_int);
