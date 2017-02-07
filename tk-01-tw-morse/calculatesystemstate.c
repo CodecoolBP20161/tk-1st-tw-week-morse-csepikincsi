@@ -1,4 +1,5 @@
 #include "selfprot.h"
+#include <math.h>
 
 /*
  * Function: CalculateSystemState
@@ -26,7 +27,7 @@ void CalculateSystemState(EnvironmentData *env) {
 
 	if (!(x == 0 && y == 0 && z == 0)) {
 		//ez itt kurvára nem jó !!
-		magnitude = (x*2 + y*2 + z*2) / (x*2 + y*2 + z*2);
+		magnitude = sqrt(x*2 + y*2 + z*2);
 		printf("\n result : %i", magnitude);
 
 	}

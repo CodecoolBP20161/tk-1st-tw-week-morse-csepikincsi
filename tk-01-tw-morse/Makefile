@@ -10,7 +10,7 @@ DEPS = selfprot.h
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 all: $(FILES)
-	$(CC) -o $(OUT_EXE) $^ $(CFALGS)
+	$(CC) -o $(OUT_EXE) $^ $(CFALGS) -lm
 
 clean:
 	rm -f *.o core
