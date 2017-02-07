@@ -19,16 +19,8 @@ void CalculateSystemState(EnvironmentData *env) {
 	int temp = env->temp;
 	int magnitude = 0;
 
-	printf("\n env.accx %f", x);
-	printf("\n env.accy %f", y);
-	printf("\n env.accz %f", z);
-	printf("\n env.temp %i", temp);
-
-
 	if (!(x == 0 && y == 0 && z == 0)) {
-		//ez itt kurvára nem jó !!
 		magnitude = sqrt(x*2 + y*2 + z*2);
-		printf("\n result : %i", magnitude);
 
 	}
 
