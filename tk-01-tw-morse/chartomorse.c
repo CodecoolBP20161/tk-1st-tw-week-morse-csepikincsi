@@ -31,6 +31,9 @@ int CharToMorse(char input[], char *output) {
 			strcat(output, "\t");
 
 		}
+		if (input[i] > 48 && input[i] < 57) {
+			strcat(output, CHAR_TO_MORSE_NUMBER[input[i]-48]);
+		}
 	}
 	return i;
 }
