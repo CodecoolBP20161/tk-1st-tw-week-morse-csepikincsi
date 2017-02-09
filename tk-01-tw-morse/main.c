@@ -50,7 +50,6 @@ void test(float acc_x, float acc_y, float acc_z, unsigned int light) {
     ed = CreateEnvironmentData(acc_x, acc_y, acc_z, light);
     CalculateSystemState(&ed);
     strcpy(word, toString(ed.state));
-    printf("\n System state : %i \n", ed.state);
     strcat(GENERATED_OUTPUT, word);
     strcat(GENERATED_OUTPUT, "\n");
     CharToMorse(word, morseWord);
