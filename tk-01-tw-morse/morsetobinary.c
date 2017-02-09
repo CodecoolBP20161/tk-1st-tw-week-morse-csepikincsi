@@ -44,14 +44,14 @@ int MorseToBinary(char input[], char output[]) {
 	char lastByte = 0;
 
 	for(int i=0; i < (len-remain); i += 8) {
-		myByte = (int) a[i] - '0' << 7 |
-				(int) a[i+1] - '0'  << 6 |
-				(int) a[i+2] - '0'  << 5 |
-				(int) a[i+3] - '0'  << 4 |
-				(int) a[i+4] - '0'  << 3 |
-				(int) a[i+5] - '0'  << 2 |
-				(int) a[i+6] - '0'  << 1 |
-				(int) a[i+7] - '0'  << 0;
+		myByte = (int) (a[i] - '0') << 7 |
+				(int) (a[i+1] - '0')  << 6 |
+				(int) (a[i+2] - '0')  << 5 |
+				(int) (a[i+3] - '0')  << 4 |
+				(int) (a[i+4] - '0')  << 3 |
+				(int) (a[i+5] - '0')  << 2 |
+				(int) (a[i+6] - '0')  << 1 |
+				(int) (a[i+7] - '0')  << 0;
 		output[round] = myByte;
 		if (i%8 == 0) {
 			round += 1;
@@ -59,7 +59,7 @@ int MorseToBinary(char input[], char output[]) {
 
 		if (round == fix_rounds) {
 			for(int b=0; b < remain; b++) {
-				lastByte |= ((int) a[(len-remain)+(b)] - '0' << (7-b));
+				lastByte |= (int) (a[(len-remain) + b] - '0') << ( 7 - b);
 			}
 			output[round] = lastByte;
 		}

@@ -1,5 +1,7 @@
 #include "selfprot.h"
 #include "stdio.h"
+#include <string.h>
+
 
 #define toString(s) (s==OK?"OK":(s==HIGH_ACCELERATION?"HIGH ACCELERATION":(s==HIGH_TEMP?"HIGH TEMP":"HIGH ACCELERATION AND TEMP")))
 

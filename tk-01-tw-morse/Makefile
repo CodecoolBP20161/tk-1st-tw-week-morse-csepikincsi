@@ -4,7 +4,7 @@ CC = gcc
 FILES = calculatesystemstate.o chartomorse.o createenvironmentdata.o morsetobinary.o  main.o
 OUT_EXE = codecool
 CFLAGS=-I.
-DEPS = selfprot.h
+DEPS = selfprot.h string.h
 
 %.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
