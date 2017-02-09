@@ -43,7 +43,7 @@ int MorseToBinary(char input[], char output[]) {
 	int round = 0;
 	printf("\n Length: %i, Fix rounds: %i, Remaining bits: %i, char array: %s", len, fix_rounds, remain, a);
 
-	for(int i=0; i <= len-remain; i += 8) {
+	for(int i=0; i < (len-remain); i += 8) {
 		myByte = (int) a[i] - '0' << 7 |
 				(int) a[i+1] - '0'  << 6 |
 				(int) a[i+2] - '0'  << 5 |
@@ -54,18 +54,17 @@ int MorseToBinary(char input[], char output[]) {
 				(int) a[i+7] - '0'  << 0;
 		output[round] = myByte;
 		round++;
-	}
 
-	char lastByte = 0;
-	for(int i=0; i < remain; i++) {
-		lastByte = (int) a[i] - '0' << 7-i;
-		int last = (int) a[19+i]- '0';
-		printf("lastbyte : %i ", last);
-		if(i == remain-1) {
-			output[fix_rounds] = lastByte;
+		if (round == fix_rounds) {
+			char lastByte = 0;
+			for(int b=0; b < remain; b++) {
+				printf("\nbyte shit: %i", (int) a[(len-remain)+(b)]- '0');
+				lastByte |= ((int) a[(len-remain)+(b+1)] - '0' << (7-b));
+			}
+			printf("\nround in second for : %i", round);
+			output[fix_rounds+1] = lastByte;
 		}
 	}
-	output[fix_rounds] = lastByte;
 
 }
 
