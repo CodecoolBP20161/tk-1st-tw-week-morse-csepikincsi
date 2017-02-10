@@ -26,7 +26,7 @@ void test(float acc_x, float acc_y, float acc_z, unsigned int light);
 
 int main() {
 	int testOk = 0;
-    test(0.3 ,1.5 ,1.2 ,0);      /* OK */
+    test(0 ,0 ,0 ,0);      /* OK */
     strcat(GENERATED_OUTPUT, "\n\n");
     test(0,0,1,35);    /* HIGH TEMP */
     strcat(GENERATED_OUTPUT, "\n\n");
